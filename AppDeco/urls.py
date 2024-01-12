@@ -12,4 +12,6 @@ urlpatterns = [
     path('buscarAltoS/', busquedaAltoS, name='BusquedaAltoS'),
     path('sillonFormulario/', sillonForm, name='SillonFormulario'),
     path('lampFormulario/', lampForm, name='LamparaFormulario'),
+    path('resultadoL/', resultadosL, name='ResultadosBusquedaL'),
+    path('resultadoS/', resultadosS, name='ResultadosBusquedaS'),
 ]

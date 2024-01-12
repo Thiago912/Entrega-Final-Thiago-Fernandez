@@ -6,16 +6,12 @@
     <title>Document</title>
 </head>
 <body>
+    
+    <p>Estamos buscando la medida: {{medida_alto}}</p>
 
-    <form action="/AppDeco/resultadosL/" method="GET">
-
-        <input type="number" name="medida_alto" id="medida_alto">
-
-        <input type="submit" value="Buscar">
-
-
-
-    </form>
+    {% for nombr in nombre %}
+        <p>Nombre: {{nombr.nombre}} ---- Alto: {{nombr.medida_alto}} </p>
+    {% endfor %}
     
 </body>
 </html>

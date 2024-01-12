@@ -1,0 +1,27 @@
+{% extends 'AppDeco/padre.html' %}
+
+{% load static %}
+
+{% block titulo %}
+Hola
+{% endblock %}
+
+{% block descripcion %}
+
+<form action="/AppDeco/resultadoL/" method="GET">
+
+    <input type="number" name="medida_alto" id="medida_alto">
+
+    <input type="submit" value="Buscar">
+
+
+
+</form>
+
+<p>Estamos buscando la medida: {{medida_alto}}</p>
+
+{% for nomb in nombre %}
+    <p>Nombre: {{nomb.nombre}} ---- Alto: {{nomb.medida_alto}} </p>
+{% endfor %}
+
+{% endblock %}

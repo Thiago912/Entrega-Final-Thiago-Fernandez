@@ -52,10 +52,10 @@ def resultados(request):
     return HttpResponse(respuesta)
 
 def busquedaAltoL(request):
-        return render(request, 'AppDeco/inicio.html')
+        return render(request, 'AppDeco/resultadosLL.html')
 
 def busquedaAltoS(request):
-        return render(request, 'AppDeco/inicio.html')
+        return render(request, 'AppDeco/resultadosSS.html')
 
 def sillonForm(request):
 
@@ -108,7 +108,7 @@ def resultadosS(request):
         medida_alto = request.GET['medida_alto']
         nombre = Sillon.objects.filter(medida_alto__icontains=medida_alto)
 
-        return render(request, 'AppDeco/inicio.html', {"nombre":nombre, "medida_alto":medida_alto})
+        return render(request, 'AppDeco/resultadosS.html', {"nombre":nombre, "medida_alto":medida_alto})
     
     else:
 
@@ -121,7 +121,7 @@ def resultadosL(request):
         medida_alto = request.GET['medida_alto']
         nombre = Lampara.objects.filter(medida_alto__icontains=medida_alto)
 
-        return render(request, 'AppDeco/inicio.html', {"nombre":nombre, "medida_alto":medida_alto})
+        return render(request, 'AppDeco/resultadosL.html', {"nombre":nombre, "medida_alto":medida_alto})
     
     else:
 
