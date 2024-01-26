@@ -1,0 +1,35 @@
+{% extends 'AppDeco/padre.html' %}
+
+{% load static %}
+{% block barra %}
+<form style="color:white; font-size: 20px" action="/AppDeco/resultados/" method="GET">
+
+    <input type="number" name="medida_alto" id="medida_alto">
+
+    <input type="submit" value="Buscar">
+
+
+
+</form>
+{% endblock %}
+{% block titulo %}
+Lista de espejos
+{% endblock %}
+
+{% block descripcion %}
+    {% for espejo in object_list %}
+
+    <a style="color:white; font-size: 20px" href="{% url 'EspejosDetalle' espejo.id %}">{{espejo.nombre}}</a>
+    <div></div>
+    {% if request.user.is_authenticated %}
+    <a class="btn btn-primary btn" href="{% url 'EspejosActualizar' espejo.id %}">Editar Espejo</a>
+    <a class="btn btn-primary btn" href="{% url 'EspejosBorrar' espejo.id %}">Borrar Espejo</a>
+    {% endif %}
+    <p style="color:white; font-size: 5px">----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+    {% endfor %}
+    
+    <br>
+    {% if request.user.is_authenticated %}
+    <a class="btn-primary btn" href="{% url 'EspejosCrear' %}"> Agregar Espejo </a>
+    {% endif %}
+{% endblock %}

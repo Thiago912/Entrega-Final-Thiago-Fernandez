@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Agency - Start Bootstrap Theme</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{% static 'AppDeco/assets/favicon.ico' %}" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'AppDeco/css/styles.css' %} " rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="{% url 'Inicio'%}"><img src="{% static 'AppDeco/assets/img/inicio.png' %}" alt="..." /></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ms-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                        {% block barra %}
+                        {% endblock %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'EspejosLeer' %}">Espejos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'LamparasLeer' %}">Lámparas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'SillonesLeer' %}">Sillones</a></li>
+                        {% if request.user.is_authenticated %}
+                        <form style="color:white; font-size: 20px" action="/AppDeco/logout/" method="POST">{% csrf_token %}
+                        <button style="color:black; font-size: 18px" type="submit">Cerrar Sesión</button></form>
+                        <div>.</div>
+                        <form style="color:white; font-size: 20px" action="/AppDeco/editar/" method="GET">{% csrf_token %}
+                        <button style="color:black; font-size: 18px" type="submit">Perfil</button></form>
+                        <div>.</div>
+                        <p style='color: white;'>Hola {{user.username}} </p>
+                        <div>.</div>
+                        {% with user.avatar_set.first as miAvatar %}
+                        {% if miAvatar %}
+                        <img style='border-radius: 50%; width: 30px; height: 30px;' class='imagen' src="{{miAvatar.imagen.url}}" alt="No se encontró la imagen" style="max-width: 60px">
+                        {% endif %}
+                        {% endwith %}
+                        {% else %}   
+                        <li class="nav-item"><a class="nav-link" href="{% url 'Login' %}">Iniciar Sesión</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'Registro' %}">Registrarse</a></li>                                          
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container">
+                <div class="masthead-subheading">
+                    About me
+                </div>
+                <div class="masthead-heading text-uppercase">
+                    {% block descripcion %}
+
+                    {% endblock %}
+                </div>
+                
+            </div>
+        </header>
+        <!-- Team-->
+        <section class="page-section bg-light" id="team">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">About Me</h2>
+                    <h3 class="section-subheading text-muted"></h3>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="{% static 'AppDeco/assets/img/perfil.jpg' %}" alt="..." />
+                            <h4>Thiago Fernández</h4>
+                            <p class="text-muted">Mi nombre es Thiago Fernández, tengo 17 años y soy un futuro estudiante de ingeniería en IA. Me interesan mucho las IA's y la música.
+                                Quiero adentrarme en el mundo de la programación y me gusta aprender cosas nuevas en general.
+                                Para contactarte conmigo podes escribirme a thiagofernandez1345@gmail.com.
+                            </p>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted"></p></div>
+                </div>
+            </div>
+        </section>

@@ -1,0 +1,17 @@
+{% extends 'AppDeco/padre.html' %}
+
+{% load static %}
+
+{% block titulo %}
+<p style="color:white; font-size: 30px">{{sillon.nombre}}</p>
+{% endblock %}
+
+{% block descripcion %}
+    <p style="color:white; font-size: 20px">Alto: {{sillon.medida_alto}}</p>
+    <p style="color:white; font-size: 20px">Ancho: {{sillon.medida_ancho}}</p>
+    <p style="color:white; font-size: 20px">Materiales: {{sillon.materiales}}</p>
+    <p style="color:white; font-size: 20px">Precio: {{sillon.precio}}</p>
+    <img src="{{sillon.imagen.url}}" alt="" style="max-width: 500px">
+    <div></div>
+    <a class="btn btn-primary btn"href="{% url 'SillonesLeer' %}"> Regresar </a>
+    {% endblock %}

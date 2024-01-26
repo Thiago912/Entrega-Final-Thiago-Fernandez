@@ -1,0 +1,17 @@
+{% extends 'AppDeco/padre.html' %}
+
+{% load static %}
+
+{% block titulo %}
+Inicio de sesión.
+{% endblock %}
+
+{% block descripcion %}
+<form style="color:white; font-size: 20px" action="" method="POST">{% csrf_token %}
+    {{formulario.as_p}}
+
+    <button style="color:black; font-size: 20px" type="submit">Iniciar sesión</button>
+
+
+</form>
+{% endblock %}

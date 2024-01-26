@@ -1,0 +1,18 @@
+{% extends 'AppDeco/padre.html' %}
+
+{% load static %}
+
+{% block titulo %}
+<p style="color:white; font-size: 30px">{{lampara.nombre}}</p>
+{% endblock %}
+
+{% block descripcion %}
+    <p style="color:white; font-size: 20px">Alto: {{lampara.medida_alto}}</p>
+    <p style="color:white; font-size: 20px">Ancho: {{lampara.medida_ancho}}</p>
+    <p style="color:white; font-size: 20px">Materiales: {{lampara.materiales}}</p>
+    <p style="color:white; font-size: 20px">Luz: {{lampara.colorluz}}</p>
+    <p style="color:white; font-size: 20px">Precio: {{lampara.precio}}</p>
+    <img src="{{lampara.imagen.url}}" alt="" style="max-width: 500px">
+    <div></div>
+    <a class="btn btn-primary btn" href="{% url 'LamparasLeer' %}"> Regresar </a>
+    {% endblock %}

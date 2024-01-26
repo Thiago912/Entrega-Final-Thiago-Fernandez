@@ -1,17 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-    <p>Estamos buscando la medida: {{medida_alto}}</p>
+{% extends 'AppDeco/padre.html' %}
 
-    {% for nombr in nombre %}
-        <p>Nombre: {{nombr.nombre}} ---- Alto: {{nombr.medida_alto}} </p>
-    {% endfor %}
-    
-</body>
-</html>
+{% load static %}
+
+{% block descripcion %}
+
+<p style="color:white; font-size: 40px">Estamos buscando la medida: {{medida_alto}}</p>
+
+{% for nombr in nombre %}
+    <p style="color:white; font-size: 20px">Nombre: {{nombr.nombre}} -- Alto: {{nombr.medida_alto}} </p>
+{% endfor %}
+
+{% endblock %}

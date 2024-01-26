@@ -1,0 +1,17 @@
+{% extends 'AppDeco/padre.html' %}
+
+{% load static %}
+
+{% block titulo %}
+<p style="color:white; font-size: 30px">{{espejo.nombre}}</p>
+{% endblock %}
+
+{% block descripcion %}
+    <p style="color:white; font-size: 20px">Alto: {{espejo.medida_alto}}</p>
+    <p style="color:white; font-size: 20px">Ancho: {{espejo.medida_ancho}}</p>
+    <p style="color:white; font-size: 20px">Materiales: {{espejo.materiales}}</p>
+    <p style="color:white; font-size: 20px">Precio: {{espejo.precio}}</p>
+    <img src="{{espejo.imagen.url}}" alt="" style="max-width: 500px">
+    <div></div>
+    <a class="btn btn-primary btn" href="{% url 'EspejosLeer' %}"> Regresar </a>
+    {% endblock %}

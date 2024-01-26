@@ -1,0 +1,35 @@
+{% extends 'AppDeco/padre.html' %}
+
+{% load static %}
+{% block barra %}
+<form style="color:white; font-size: 20px" action="/AppDeco/resultadoL/" method="GET">
+
+    <input type="number" name="medida_alto" id="medida_alto">
+
+    <input type="submit" value="Buscar">
+
+
+
+</form>
+{% endblock %}
+{% block titulo %}
+Lista de lámparas
+{% endblock %}
+
+{% block descripcion %}
+    {% for lampara in object_list %}
+
+    <a style="color:white; font-size: 20px" href="{% url 'LamparasDetalle' lampara.id %}">{{lampara.nombre}}</a>
+    <div></div>
+    {% if request.user.is_authenticated %}
+    <a class="btn btn-primary btn" href="{% url 'LamparasActualizar' lampara.id %}">Editar Lámpara</a>
+    <a class="btn btn-primary btn" href="{% url 'LamparasBorrar' lampara.id %}">Borrar Lámpara</a>
+    {% endif %}
+    <p style="color:white; font-size: 5px">----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+    {% endfor %}
+    
+    <br>
+    {% if request.user.is_authenticated %}
+    <a class="btn btn-primary btn" href="{% url 'LamparasCrear' %}"> Agregar Lámpara </a>
+    {% endif %}
+{% endblock %}

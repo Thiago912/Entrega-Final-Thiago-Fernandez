@@ -2,13 +2,9 @@
 
 {% load static %}
 
-{% block titulo %}
-Hola
-{% endblock %}
-
 {% block descripcion %}
 
-<form action="/AppDeco/resultadoL/" method="GET">
+<form style="color:white; font-size: 20px" action="/AppDeco/resultadoL/" method="GET">
 
     <input type="number" name="medida_alto" id="medida_alto">
 
@@ -18,10 +14,10 @@ Hola
 
 </form>
 
-<p>Estamos buscando la medida: {{medida_alto}}</p>
+<p style="color:white; font-size: 40px">Estamos buscando la medida: {{medida_alto}}</p>
 
 {% for nomb in nombre %}
-    <p>Nombre: {{nomb.nombre}} ---- Alto: {{nomb.medida_alto}} </p>
+    <p style="color:white; font-size: 20px">Nombre: {{nomb.nombre}} -- Alto: {{nomb.medida_alto}} </p>
 {% endfor %}
 
 {% endblock %}

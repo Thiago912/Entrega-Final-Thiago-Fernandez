@@ -1,0 +1,18 @@
+{% extends 'AppDeco/padre.html' %}
+
+{% load static %}
+
+{% block titulo %}
+Acá se edita al usuario.
+{% endblock %}
+
+{% block descripcion %}
+<form style="color:white; font-size: 20px" action="" method="POST">{% csrf_token %}
+    {{formulario.as_p}}
+
+    <button style="color:black; font-size: 20px" type="submit">Editar</button>
+
+</form>
+<form style="color:white; font-size: 20px" action="/AppDeco/agregar/" method="GET">{% csrf_token %}
+    <button style="color:black; font-size: 18px" type="submit">Agregar foto</button></form>
+{% endblock %}

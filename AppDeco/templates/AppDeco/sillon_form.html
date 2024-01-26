@@ -1,0 +1,16 @@
+{% extends 'AppDeco/padre.html' %}
+
+{% load static %}
+
+{% block titulo %}
+<p style="color:white; font-size: 30px">{{sillon.nombre}}</p>
+{% endblock %}
+
+{% block descripcion %}
+    <form style="font-size: 20px" method="POST" enctype='multipart/form-data'> {% csrf_token %}
+
+        {{form.as_p}}
+        <input style="font-size: 25px"type="submit" value="Enviar">
+
+    </form>
+    {% endblock %}

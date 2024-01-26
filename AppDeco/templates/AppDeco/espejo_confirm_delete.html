@@ -1,0 +1,17 @@
+{% extends 'AppDeco/padre.html' %}
+
+{% load static %}
+
+{% block titulo %}
+Lista de espejos
+{% endblock %}
+
+{% block descripcion %}
+    <form action="" method="POST"> {% csrf_token %}
+
+        <p style="font-size: 20px">¿Estás seguro de eliminar este espejo?</p>
+
+        <input style="font-size: 20px" type="submit" value="Confirmar">
+
+    </form>
+    {% endblock %}

@@ -6,3 +6,4 @@ from AppDeco.models import *
 admin.site.register(Sillon)
 admin.site.register(Espejo)
 admin.site.register(Lampara)
+admin.site.register(Avatar)
