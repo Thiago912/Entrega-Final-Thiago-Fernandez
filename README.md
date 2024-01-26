@@ -28,9 +28,17 @@ Front-end:
 
 *HTML 5
 
+*JavaScript 5.3.2
+
  *CSS 3
 
 Back-end:
 
+*Python 3.11.7
 
+*Django 5.0
+
+Video Demostración:
+
+https://youtu.be/JuaYxAJaquI
  
