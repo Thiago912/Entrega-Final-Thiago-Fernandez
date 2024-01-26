@@ -1,7 +1,36 @@
-Para agregar un espejo escribir /AppDeco/espejoFormulario
-Para agregar un sillon escribir /AppDeco/sillonFormulario
-Para agregar una lampara escribir /AppDeco/lampFormulario
+Comisión: 50195
 
-Para buscar la altura de un espejo escribir /AppDeco/buscarAlto
-Para buscar la altura de un sillon escribir /AppDeco/buscarAltoS
-Para buscar la altura de un espejo escribir /AppDeco/buscarAltoL
+Alumno: Thiago Fernández
+
+Descripción:
+
+E-commerce de decoración de interiores.
+
+El usuario necesita iniciar sesión o registrarse para poder publicar, editar o borrar productos
+
+Los usuario pueden:
+
+*Publicar productos.
+
+*Ver productos: 'Espejos', 'Lámparas' y 'Sillones'
+
+*Editar perfil
+
+*Agregar foto de perfil
+
+*Iniciar sesión/ registrarse
+
+*Cerrar sesión
+
+Tecnología usada:
+
+Front-end:
+
+*HTML 5
+
+ *CSS 3
+
+Back-end:
+
+
+ 
